@@ -15,4 +15,7 @@ return function(Table : {{percentage: number, callback: any}})
         if type(callback) == "function" then callback() return end
         return callback
     end
+    
+    if typeof(Table[1].callback) == "function" then Table[1].callback() return end
+    return Table[1].callback
 end
